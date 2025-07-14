@@ -7,6 +7,8 @@ import { getCurrentUser } from "@/lib/getCurrentUser";
 import clsx from "clsx";
 import DeleteEmployeeButton from "@/components/DeleteEmployeeButton";
 
+export const dynamic = "force-dynamic";
+
 interface EmployeeType {
   _id: string;
   name: string;
