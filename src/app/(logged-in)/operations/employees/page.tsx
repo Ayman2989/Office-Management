@@ -1,11 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import { Plus, Pencil, Trash } from "lucide-react";
+import { Plus, Pencil } from "lucide-react";
 import { connectDB } from "@/db/config";
 import Employee from "@/models/Employee";
 import { getCurrentUser } from "@/lib/getCurrentUser";
 import clsx from "clsx";
 import DeleteEmployeeButton from "@/components/DeleteEmployeeButton";
+
+interface EmployeeType {
+  _id: string;
+  name: string;
+  email: string;
+  role: string;
+}
 
 const EmployeesPage = async () => {
   await connectDB();
@@ -33,7 +40,7 @@ const EmployeesPage = async () => {
 
       {/* Employee List */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {employees.map((employee: any) => {
+        {employees.map((employee: EmployeeType) => {
           const isCurrentUser = user._id.toString() === employee._id.toString();
           return (
             <div

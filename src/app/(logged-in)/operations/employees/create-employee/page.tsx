@@ -46,7 +46,7 @@ const AddEmployeePage = () => {
       reset();
       router.push("/operations/employees");
     } catch (err) {
-      alert("Error submitting form");
+      alert("Error submitting form" + err);
     }
   };
 
