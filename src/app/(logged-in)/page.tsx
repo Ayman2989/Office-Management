@@ -1,5 +1,17 @@
-import { redirect } from "next/navigation";
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
-  redirect("/home"); // Always redirects to /tickets
+export default function LoggedInHome() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/home");
+  }, []);
+
+  return (
+    <div style={{ padding: "2rem", textAlign: "center" }}>
+      <p>Redirecting...</p>
+    </div>
+  );
 }
