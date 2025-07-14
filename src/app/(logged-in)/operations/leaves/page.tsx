@@ -7,6 +7,8 @@ import { connectDB } from "@/db/config";
 import Leave from "@/models/Leave";
 import { WithdrawButton } from "@/components/WithdrawButton";
 
+export const dynamic = "force-dynamic";
+
 const LeavesPage = async () => {
   const currentUser = await getCurrentUser();
   console.log("Current User:", currentUser);

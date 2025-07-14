@@ -5,6 +5,8 @@ import { connectDB } from "@/db/config";
 import Event from "@/models/Event";
 import { getCurrentUser } from "@/lib/getCurrentUser";
 
+export const dynamic = "force-dynamic";
+
 const EventsPage = async () => {
   await connectDB();
   const user = await getCurrentUser();
