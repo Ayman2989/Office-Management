@@ -10,10 +10,9 @@ import { WithdrawButton } from "@/components/WithdrawButton";
 export const dynamic = "force-dynamic";
 
 const LeavesPage = async () => {
+  await connectDB();
   const currentUser = await getCurrentUser();
   console.log("Current User:", currentUser);
-
-  await connectDB();
 
   if (!currentUser)
     return <div className="text-center mt-10">Not authorized</div>;
